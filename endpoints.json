@@ -1,0 +1,7 @@
+{
+	"root": "https://dummyjson.com",
+
+	"categories" : "/products/category/",
+	"signle_product" : "/products/",
+	"add_product" : "/products/add"
+}

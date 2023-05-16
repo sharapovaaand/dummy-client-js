@@ -1,0 +1,16 @@
+{
+"products": [
+    {
+        "id": 30,
+        "title": "Mahebourg",
+        "description": "Mahebourg ($409.99 as tested) is one of the largest Mahebourgbooks.",
+        "price": 402,
+        "discountPercentage": 11.02,
+        "rating": 4.57,
+        "stock": 83,
+        "brand": "Mahebourg",
+        "category": "laptops",
+        "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png"
+    }
+]
+}

@@ -1,0 +1,9 @@
+{
+	"name": "dummy-api-client",
+	"scripts": {
+		"client": ""
+	},
+	"dependencies": {
+		"dotenv": "^16.0.3"
+	}
+}
