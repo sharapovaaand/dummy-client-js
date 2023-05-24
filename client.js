@@ -20,6 +20,7 @@ class dummyApiCallerClass {
   	throw new Error(res.status);
 	};
 
+	// Get all products of a category
 	getCategory(categoryName, auth = false) {
 	  let url = testEndpoints.categories + categoryName;
 	  let config = {
@@ -31,6 +32,7 @@ class dummyApiCallerClass {
 	  return this.request(url, config);
   };
 
+  // Get a product by ID
 	getProduct(id, auth = false) {
 		let url = testEndpoints.signle_product + id;
 		let config = {
@@ -42,6 +44,7 @@ class dummyApiCallerClass {
 	  return this.request(url, config);
 	};
 
+	//Add a product
 	addProduct (body, auth = false) {
 		let url = testEndpoints.add_product;
 		let config = {
@@ -56,6 +59,7 @@ class dummyApiCallerClass {
 	  return this.request(url, config);
 	}
 
+	//Delete a product
 	deleteProduct (id, auth = false) {
 		let url = testEndpoints.signle_product + id;
 		let config = {
@@ -83,7 +87,7 @@ async function clientExample() {
 	console.log(`\n`);
 	console.log('Get the first five products');
 
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < 5; i++)
 	{
 		product = await dummyApiCaller.getProduct(i+1);
 		console.log(product);
@@ -106,7 +110,7 @@ async function clientExample() {
 	console.log(`\n`);
 	console.log('Delete the first five products');
 
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < 5; i++)
 	{
 		product = await dummyApiCaller.deleteProduct(i+1);
 		console.log(product);
