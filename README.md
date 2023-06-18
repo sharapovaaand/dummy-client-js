@@ -7,7 +7,37 @@ A simple client for interacting with [DummyJSON](https://dummyjson.com/), a free
 * Get products by ID
 * Add products 
 * Delete products
-* Use all the functions listed above as an authorized user
+* Use all the functions listed above as an authenticated user (bearer authentication only)
+
+# Usage
+To start using ```dummy-client-js```:
+1. Clone the repository to your local machine
+2. Navigate to the directory where you cloned the repository
+3. Install the project dependencies by running the ```npm install```command
+4. Start the ```clinet.js``` by running the ```node client.js``` command
+
+You can change the ```clientExample()``` function in ```node client.js``` to modify client functionality.
+
+# Example
+Adding new products from file ``new_products.json``.
+
+```javascript
+const newProducts = require("./new_products");
+
+/*...*/
+
+async function clientExample() {
+
+const dummyApiCaller = new dummyApiCallerClass();
+let product;
+
+  for (i = 0; i < newProducts.products.length; i++) {
+	  product = await dummyApiCaller.addProduct(newProducts.products[i])
+	  console.log(product);
+	  console.log(`\n`);
+  }
+}
+```
 
 # API Reference
 ## getCategory
@@ -33,7 +63,7 @@ getProduct(id, auth = false)
 Add a product. 
 > **Note**
 > 
-> Since DummyJSON is intended only for testing purposes, this function simulates a POST request, but does not make changes to the DummyJSON server. For more information, see the [DummyJSON documentation](https://dummyjson.com/docs/products#add).
+> Since DummyJSON is intended only for testing purposes, this function simulates a POST request, but does not make changes to the DummyJSON database. For more information, see the [DummyJSON documentation](https://dummyjson.com/docs/products#add).
 ```javascript
 addProduct(body, auth = false)
 ```
@@ -45,7 +75,7 @@ addProduct(body, auth = false)
 Delete a product. 
 > **Note**
 >
-> Since DummyJSON is intended only for testing purposes, this function simulates a DELETE request, but does not make changes to the DummyJSON server.  For more information, see the [DummyJSON documentation](https://dummyjson.com/docs/products#delete).
+> Since DummyJSON is intended only for testing purposes, this function simulates a DELETE request, but does not make changes to the DummyJSON database.  For more information, see the [DummyJSON documentation](https://dummyjson.com/docs/products#delete).
 ```javascript
 deleteProduct(id, auth = false)
 ```
@@ -53,23 +83,4 @@ deleteProduct(id, auth = false)
 | ------------- | ------------- |------------- | ------------- |
 | id  | Number | Yes  | The ID of the product  |
 | auth | Boolean  | No | If True, access the resource as an authorized user   |
-
-# Example
-Adding new products from file ``new_products.json``.
-
-```javascript
-const newProducts = require("./new_products");
-
-async function clientExample() {
-
-const dummyApiCaller = new dummyApiCallerClass();
-let product;
-
-  for (i = 0; i < newProducts.products.length; i++) {
-	  product = await dummyApiCaller.addProduct(newProducts.products[i])
-	  console.log(product);
-	  console.log(`\n`);
-  }
-}
-```
 
