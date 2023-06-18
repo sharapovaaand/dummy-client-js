@@ -13,13 +13,13 @@ A simple client for interacting with [DummyJSON](https://dummyjson.com/), a free
 To start using ```dummy-client-js```:
 1. Clone the repository to your local machine
 2. Navigate to the directory where you cloned the repository
-3. Install the project dependencies by running the ```npm install```command
-4. Start the ```clinet.js``` by running the ```node client.js``` command
+3. Install the project dependencies by running the ```npm install``` command
+4. Start ```client.js``` by running the ```node client.js``` command
 
-You can change the ```clientExample()``` function in ```node client.js``` to modify client functionality.
+You can change the ```clientExample()``` function in ```client.js``` to modify client functionality.
 
 # Example
-Adding new products from file ``new_products.json``.
+Adding new products from file ``new_products.json``:
 
 ```javascript
 const newProducts = require("./new_products");
@@ -37,6 +37,8 @@ let product;
 	  console.log(`\n`);
   }
 }
+
+clientExample();
 ```
 
 # API Reference
@@ -48,7 +50,7 @@ getCategory(categoryName, auth = false)
 | Name  | Type | Required | Description |
 | ------------- | ------------- |------------- | ------------- |
 | categoryName  | String | Yes  | The name of the category  |
-| auth | Boolean  | No | If True, access the resource as an authorized user   |
+| auth | Boolean  | No | If True, access the resource as an authenticated user   |
 ## getProduct
 Get a product by ID.
 ```javascript
@@ -57,7 +59,7 @@ getProduct(id, auth = false)
 | Name  | Type | Required | Description |
 | ------------- | ------------- |------------- | ------------- |
 | id  | Number | Yes  | The ID of the product  |
-| auth | Boolean  | No | If True, access the resource as an authorized user   |
+| auth | Boolean  | No | If True, access the resource as an authenticated user   |
 
 ## addProduct
 Add a product. 
@@ -70,7 +72,7 @@ addProduct(body, auth = false)
 | Name  | Type | Required | Description |
 | ------------- | ------------- |------------- | ------------- |
 | body  | Object | Yes  | A product to add  |
-| auth | Boolean  | No | If True, access the resource as an authorized user   |
+| auth | Boolean  | No | If True, access the resource as an authenticated user   |
 ## deleteProduct
 Delete a product. 
 > **Note**
@@ -82,5 +84,5 @@ deleteProduct(id, auth = false)
 | Name  | Type | Required | Description |
 | ------------- | ------------- |------------- | ------------- |
 | id  | Number | Yes  | The ID of the product  |
-| auth | Boolean  | No | If True, access the resource as an authorized user   |
+| auth | Boolean  | No | If True, access the resource as an authenticated user   |
 
