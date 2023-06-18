@@ -7,7 +7,7 @@ A simple client for interacting with [DummyJSON](https://dummyjson.com/), a free
 * Get products by ID
 * Add products 
 * Delete products
-* Use all the functions above as an authorized user
+* Use all the functions listed above as an authorized user
 
 # API Reference
 ## getCategory
