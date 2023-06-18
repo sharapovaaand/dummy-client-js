@@ -1,6 +1,12 @@
 # dummy-client-js
 A simple client for interacting with [DummyJSON](https://dummyjson.com/), a free fake REST API.
 
+# Table of Contents
+* [Features](#features)
+* [Usage](#usage)
+* [Example](#example)
+* [API Reference](#api-reference)
+
 # Features
 ```dummy-client-js``` allows you to:
 * List all of the products in a specified product category
@@ -42,6 +48,7 @@ clientExample();
 ```
 
 # API Reference
+
 ## getCategory
 Get all products of the specified category.
 ```javascript
@@ -51,6 +58,7 @@ getCategory(categoryName, auth = false)
 | ------------- | ------------- |------------- | ------------- |
 | categoryName  | String | Yes  | The name of the category  |
 | auth | Boolean  | No | If True, access the resource as an authenticated user   |
+
 ## getProduct
 Get a product by ID.
 ```javascript
@@ -73,6 +81,7 @@ addProduct(body, auth = false)
 | ------------- | ------------- |------------- | ------------- |
 | body  | Object | Yes  | A product to add  |
 | auth | Boolean  | No | If True, access the resource as an authenticated user   |
+
 ## deleteProduct
 Delete a product. 
 > **Note**
